@@ -47,6 +47,7 @@ UserRouter.post('/login', expressAsyncHandler(async (req, res) => {
 
 
 UserRouter.post('/register',expressAsyncHandler(async (req,res)=>{
+    console.log("API hitted")
     try{
       const emailExist= await User.findOne({email:req.body.email});
        if(emailExist){
