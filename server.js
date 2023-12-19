@@ -54,6 +54,12 @@ app.get('/scroll',(req,res)=>{
     res.send(data.ScrollProducts)
 })
 
+app.get('/',(req,res)=>{
+    console.log("api test");
+    res.status(200).json({'message':"API hitted"});
+})
+
+
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
